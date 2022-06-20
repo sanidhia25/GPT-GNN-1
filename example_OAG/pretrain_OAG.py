@@ -30,7 +30,7 @@ parser.add_argument('--data_dir', type=str, default='/datadrive/dataset/graph_CS
                     help='The address of preprocessed graph.')
 parser.add_argument('--pretrain_model_dir', type=str, default='/datadrive/models/test',
                     help='The address for storing the models and optimization results.')
-parser.add_argument('--cuda', type=int, default=2,
+parser.add_argument('--cuda', type=int, default=-1,
                     help='Avaiable GPU ID')      
 parser.add_argument('--sample_depth', type=int, default=6,
                     help='How many layers within a mini-batch subgraph')
@@ -49,8 +49,8 @@ parser.add_argument('--n_heads', type=int, default=8,
                     help='Number of attention head')
 parser.add_argument('--n_layers', type=int, default=3,
                     help='Number of GNN layers')
-parser.add_argument('--prev_norm', help='Whether to add layer-norm on the previous layers', action='store_true')
-parser.add_argument('--last_norm', help='Whether to add layer-norm on the last layers',     action='store_true')
+parser.add_argument('--prev_norm', help='Whether to add layer-norm on the previous layers', action='store_true', default=True)
+parser.add_argument('--last_norm', help='Whether to add layer-norm on the last layers',     action='store_true', default=True)
 parser.add_argument('--dropout', type=int, default=0.2,
                     help='Dropout ratio')
 
